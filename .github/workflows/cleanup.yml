@@ -1,31 +1,44 @@
-name: 自动清理所有运行日志
+name: 自动清理运行日志
 
 on:
-  workflow_dispatch: # 支持手动点击运行
+  workflow_dispatch:
   workflow_run:
-    workflows: ["*"] # 只要有任何任务完成，就触发清理
+    workflows: ["*"]
     types: [completed]
 
 jobs:
   delete-runs:
     runs-on: ubuntu-latest
     permissions:
-      actions: write # 显式声明需要写入权限
+      actions: write
     steps:
-      - name: 强制清理所有旧记录
+      - name: 批量清理冗余记录
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          # 获取所有工作流的路径（例如 main.yml, cleanup.yml 等）
-          workflows=$(gh api repos/${{ github.repository }}/workflows --jq '.workflows[].path | split("/") | last')
+          # 1. 获取所有工作流 ID（包括索引、部署和清理任务本身）
+          WFS=$(gh api repos/${{ github.repository }}/workflows --jq '.workflows[].id')
           
-          for wf in $workflows; do
-            echo "正在清理工作流: $wf"
-            # 找到该工作流下除最新 1 条外的所有 ID 并删除
-            # 注意：这里去掉了 || true，失败会报错，方便我们排查
-            gh run list --workflow "$wf" --limit 100 --json databaseId -q '.[1:].databaseId' | xargs -I{} gh run delete {}
+          # 2. 额外加入系统内置的部署任务名称
+          WFS="$WFS pages-build-deployment"
+          
+          for wf in $WFS; do
+            echo "--- 正在检查任务: $wf ---"
+            
+            # 获取该任务除最新一条外的所有 ID，且显式排除“当前正在运行”的这个清理任务 ID
+            # tail -n +2 的作用是跳过第一行（即保留最新的一条）
+            RUNS=$(gh run list --workflow "$wf" --limit 100 --json databaseId -q ".[] | select(.databaseId != ${{ github.run_id }}) | .databaseId" | tail -n +2)
+            
+            if [ -z "$RUNS" ]; then
+              echo "没有需要清理的旧记录。"
+              continue
+            fi
+            
+            for rid in $RUNS; do
+              echo "正在强行删除记录: $rid"
+              # 使用 || true 确保即使某一条删不掉（比如被系统锁定），脚本也会继续往下走而不报错
+              gh run delete "$rid" || true
+            done
           done
           
-          # 专门针对系统自带的部署任务进行清理
-          echo "正在清理系统部署任务..."
-          gh run list --workflow "pages-build-deployment" --limit 100 --json databaseId -q '.[1:].databaseId' | xargs -I{} gh run delete {}
+          echo "✅ 清理指令已全部完成，列表即将变清爽！"
