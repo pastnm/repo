@@ -1,15 +1,12 @@
 name: 自动清理所有运行日志
 
 on:
-  # 只要这两个工作流中的任何一个运行完成，就触发清理
   workflow_run:
     workflows: ["pages build and deployment", "自动生成越狱源索引"]
     types:
       - completed
-  # 每天凌晨自动扫除一次（保底）
   schedule:
     - cron: '0 0 * * *'
-  # 支持手动点击运行
   workflow_dispatch:
 
 jobs:
@@ -17,14 +14,13 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       actions: write
-      contents: read
     steps:
-      - name: 清理全仓库所有工作流的旧日志
-        uses: Mattraiano/delete-workflow-runs@v2
-        with:
-          token: ${{ github.token }}
-          repository: ${{ github.repository }}
-          # 0天前的全部删掉
-          retain_days: 0
-          # 每个工作流都只保留最后 1 个成功记录
-          keep_minimum_runs: 1
+      - name: 彻底清理旧记录 (每个工作流仅保留最新1条)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          # 清理部署日志：列出所有记录，跳过第1个最新的，删除剩下的
+          gh run list --workflow "pages build and deployment" --limit 100 --json databaseId -q '.[1:].databaseId' | xargs -I{} gh run delete {} || echo "无多余部署记录"
+          
+          # 清理索引日志：列出所有记录，跳过第1个最新的，删除剩下的
+          gh run list --workflow "自动生成越狱源索引" --limit 100 --json databaseId -q '.[1:].databaseId' | xargs -I{} gh run delete {} || echo "无多余索引记录"
