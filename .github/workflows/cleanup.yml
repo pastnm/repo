@@ -12,26 +12,26 @@ jobs:
     permissions:
       actions: write
     steps:
-      - name: 强制清理：每项仅保留 1 条记录
+      - name: 纯ID清理 (不使用名称)
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          echo "正在扫描所有任务记录..."
+          echo "开始执行纯 ID 扫描..."
           
-          # 这行指令会做四件事：
-          # 1. 获取最近 500 条记录的 ID 和所属任务名称
-          # 2. 按照任务名称（索引、部署、清理）进行分组
-          # 3. 在每一组内，保留第 1 条（最新的），提取剩下所有旧记录的 ID
-          # 4. 排除掉当前正在运行的这个清理任务 ID，防止“自杀”报错
-          targets=$(gh run list --limit 500 --json databaseId,workflowName \
-            -q "group_by(.workflowName) | .[] | .[1:] | .[].databaseId | select(. != ${{ github.run_id }})")
+          # 直接获取所有运行记录，按任务 ID 分组，每组保留最新 1 条，提取其余所有 ID
+          # 这样可以绕过名称识别不了导致的 404 错误
+          run_ids=$(gh api repos/${{ github.repository }}/actions/runs --paginate \
+            --jq '.workflow_runs | group_by(.workflow_id) | .[] | sort_by(.created_at) | reverse | .[1:] | .[].id')
 
-          if [ -z "$targets" ]; then
-            echo "✅ 检查完毕：每个任务都只剩下一条记录，无需清理。"
+          if [ -z "$run_ids" ]; then
+            echo "✅ 扫描完毕：没有发现多余的旧记录。"
           else
-            for rid in $targets; do
-              echo "正在清理旧记录 ID: $rid"
-              gh run delete "$rid" || true
+            for rid in $run_ids; do
+              # 排除当前正在运行的任务 ID，防止报错
+              if [ "$rid" != "${{ github.run_id }}" ]; then
+                echo "正在删除旧记录 ID: $rid"
+                gh api -X DELETE repos/${{ github.repository }}/actions/runs/$rid || true
+              fi
             done
-            echo "🎉 清理完成！你的 Actions 列表现在应该只有 3 条绿勾了。"
+            echo "🎉 清理完成！你的 Actions 列表已变干净。"
           fi
