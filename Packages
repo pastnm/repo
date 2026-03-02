@@ -1,3 +1,20 @@
+Package: cn.llld.errorfilter
+Version: 1.0
+Architecture: iphoneos-arm64
+Maintainer: 来了老弟
+Installed-Size: 952
+Depends: mobilesubstrate
+Filename: ./debs/iphoneos-arm64/插件异常崩溃日志过滤XD_1.0_iphoneos-arm64.deb
+Size: 630846
+MD5sum: edff7336df86a9d53299c968d1d5ca30
+SHA1: c94de8dce79f53b5ea51d0334ded4cf804c22d11
+SHA256: 1d1fa8b05abd48cfd4798809abc9d28b5740b8cf785bfbc571e3277309013c0d
+Section: rootless插件
+Description: tweak exception error crash log filter, settings to see instructions，插件异常错误崩溃日志过滤器，在设置看说明。
+Author: 来了老弟
+Icon: file:///var/jb/Library/PreferenceBundles/errorllldprefs.bundle/icons-llld/Errorfilter.png
+Name: 插件异常崩溃日志过滤XD
+
 Package: zp.dopamine.blacklist
 Version: 0.0.1-1
 Architecture: iphoneos-arm64
