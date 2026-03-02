@@ -12,32 +12,26 @@ jobs:
     permissions:
       actions: write
     steps:
-      - name: 强制清理冗余记录
+      - name: 强制清理：每项仅保留 1 条记录
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          # 1. 获取所有工作流的 ID 列表
-          workflow_ids=$(gh api repos/${{ github.repository }}/workflows --jq '.workflows[].id')
+          echo "正在扫描所有任务记录..."
           
-          # 2. 额外手动加入系统内置的 Pages 任务名称，确保它也能被清理
-          all_targets="$workflow_ids pages-build-deployment"
-          
-          for wf in $all_targets; do
-            echo "--- 正在扫描任务: $wf ---"
-            
-            # 获取该任务下所有记录 ID，排除掉当前正在运行的清理任务，并跳过最新的那一条
-            # awk 'NR>1' 的作用是：保留第1行（最新的一条），从第2行开始处理
-            run_ids=$(gh run list --workflow "$wf" --limit 100 --json databaseId -q ".[] | select(.databaseId != ${{ github.run_id }}) | .databaseId" | awk 'NR>1')
-            
-            if [ -z "$run_ids" ]; then
-              echo "该任务没有多余的旧记录需要清理。"
-            else
-              for rid in $run_ids; do
-                if [ -n "$rid" ]; then
-                  echo "正在清理 ID: $rid"
-                  gh run delete "$rid" || true
-                fi
-              done
-            fi
-          done
-          echo "✅ 清理完成！你的 Actions 页面现在应该非常干净了。"
+          # 这行指令会做四件事：
+          # 1. 获取最近 500 条记录的 ID 和所属任务名称
+          # 2. 按照任务名称（索引、部署、清理）进行分组
+          # 3. 在每一组内，保留第 1 条（最新的），提取剩下所有旧记录的 ID
+          # 4. 排除掉当前正在运行的这个清理任务 ID，防止“自杀”报错
+          targets=$(gh run list --limit 500 --json databaseId,workflowName \
+            -q "group_by(.workflowName) | .[] | .[1:] | .[].databaseId | select(. != ${{ github.run_id }})")
+
+          if [ -z "$targets" ]; then
+            echo "✅ 检查完毕：每个任务都只剩下一条记录，无需清理。"
+          else
+            for rid in $targets; do
+              echo "正在清理旧记录 ID: $rid"
+              gh run delete "$rid" || true
+            done
+            echo "🎉 清理完成！你的 Actions 列表现在应该只有 3 条绿勾了。"
+          fi
