@@ -15,6 +15,26 @@ Author: 来了老弟
 Icon: file:///var/jb/Library/PreferenceBundles/errorllldprefs.bundle/icons-llld/Errorfilter.png
 Name: 插件异常崩溃日志过滤XD
 
+Package: cn.zqbb.holdcpu
+Version: 2.3.5-3
+Architecture: iphoneos-arm64
+Maintainer: zqbb
+Installed-Size: 3696
+Depends: mobilesubstrate (>= 0.9.5000), firmware (>= 15.0), preferenceloader, com.opa334.ccsupport
+Conflicts: com.yourepo.0xash.powercuff, byg.iosios.net.powercuff, com.dao.powercuff, com.rpetrich.powercuff, com.yourepo.0xash.devicemonitor, com.yourepo.0xash.fuckthermal, com.shadow.fuckthermal, com.dao.fuckthermal, byg.iosios.net.monitor, byg.iosios.net.disablethermalmonitord, com.nan.disablethermalmonitord
+Filename: ./debs/iphoneos-arm64/Hello CPU_2.3.5-3_iphoneos-arm64.deb
+Size: 1414104
+MD5sum: aab0e83b178e30e7359a8c0e5363ed5b
+SHA1: 0462ccb9e554782ee0cdccf936c11101e65d0b87
+SHA256: d464e9b38e52ecd725ce6dba596bee05c7eae9d9d1b73bf679a3e5351362fbba
+Section: Tweaks
+Priority: optional
+Description: (解除温控) (锁定低电量CPU频率)
+Author: zqbb
+Icon: https://rootless.002599.xyz/web/icon/cn.zqbb.holdcpu
+Name: Hello CPU
+Sileodepiction: https://rootless.002599.xyz/web/cn.zqbb.holdcpu
+
 Package: com.dao.ccborder
 Version: 1.2
 Architecture: iphoneos-arm64
@@ -32,6 +52,23 @@ Description: 类iOS18样式的控制中心，可调节控制中心模块形状�
 Author: fiore & p2kdev & 妖刀
 Name: CCBorder16(rootless)
 Sileodepiction: https://xiangfeidexiaohuo.github.io/sileodepiction/ccborder/js.json
+
+Package: com.jontelang.snapper3
+Version: 1.2.1
+Architecture: iphoneos-arm64
+Maintainer: Jonathan Winger-lang
+Installed-Size: 4148
+Depends: mobilesubstrate, firmware (>= 14.0), preferenceloader
+Conflicts: com.jontelang.snapper, com.jontelang.snapper2.packix, xyz.cypwn.snapperfr33
+Filename: ./debs/iphoneos-arm64/Snapper 3_1.2.1_iphoneos-arm64.deb
+Size: 1330398
+MD5sum: bed139f52395ff2ad5d7c2b7e50f6ae9
+SHA1: 1f6a2f47979db90bd684350f1c21f1a9b7bc416d
+SHA256: e95c73f46a377796ee92360e1679a46c0c08aabb79128a90a1426b5eb5861ed1
+Section: Tweaks
+Description: Pin screenshots on the screen.
+Author: Jonathan Winger-lang
+Name: Snapper 3
 
 Package: zp.dopamine.blacklist
 Version: 0.0.1-1
