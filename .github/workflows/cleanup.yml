@@ -2,42 +2,30 @@ name: 自动清理所有运行日志
 
 on:
   workflow_dispatch: # 支持手动点击运行
-  schedule:
-    - cron: '0 0 * * *' # 每天凌晨自动清理
   workflow_run:
-    workflows: ["*"] # 只要有任何任务完成，就触发清理
+    workflows: ["*"] # 只要有任务完成就触发
     types: [completed]
 
 jobs:
   delete-runs:
     runs-on: ubuntu-latest
     permissions:
-      actions: write # 必须有写入权限才能执行删除
+      actions: write
     steps:
-      - name: 批量清理旧记录
+      - name: 精准清理三类任务记录
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          # 第一步：获取仓库中所有的工作流 ID
-          workflow_ids=$(gh api repos/${{ github.repository }}/workflows --jq '.workflows[].id')
+          # 1. 清理：自动生成越狱源索引
+          echo "清理索引记录..."
+          gh run list --workflow "自动生成越狱源索引" --limit 100 --json databaseId -q '.[1:].databaseId' | xargs -I{} gh run delete {} || true
           
-          for id in $workflow_ids; do
-            # 获取该工作流的名称（方便日志查看）
-            name=$(gh api repos/${{ github.repository }}/workflows/$id --jq '.name')
-            echo "🔎 正在检查工作流: [$name] (ID: $id)"
-            
-            # 获取除最新的 1 条之外的所有运行记录 ID
-            # 如果你想要连最后一条也删掉（不建议），可以把 [1:] 改成 [0:]
-            run_ids=$(gh run list --workflow "$id" --json databaseId --limit 100 -q '.[1:].databaseId')
-            
-            if [ -z "$run_ids" ]; then
-              echo "✅ 无需清理：该工作流只有 1 条或没有记录。"
-            else
-              for run_id in $run_ids; do
-                echo "🗑️ 正在删除旧记录: $run_id"
-                gh run delete "$run_id"
-              done
-            fi
-            echo "-----------------------------------"
-          done
-          echo "🎉 所有旧日志清理完毕！"
+          # 2. 清理：自动清理所有运行日志
+          echo "清理自身记录..."
+          gh run list --workflow "自动清理所有运行日志" --limit 100 --json databaseId -q '.[1:].databaseId' | xargs -I{} gh run delete {} || true
+          
+          # 3. 清理：GitHub Pages 部署记录 (这是最难删的)
+          echo "清理部署记录..."
+          gh run list --workflow "pages-build-deployment" --limit 100 --json databaseId -q '.[1:].databaseId' | xargs -I{} gh run delete {} || true
+          
+          echo "✅ 清理指令已全部发出！"
