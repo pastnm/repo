@@ -3,29 +3,29 @@ name: 自动清理所有运行日志
 on:
   workflow_dispatch: # 支持手动点击运行
   workflow_run:
-    workflows: ["*"] # 只要有任务完成就触发
+    workflows: ["*"] # 只要有任何任务完成，就触发清理
     types: [completed]
 
 jobs:
   delete-runs:
     runs-on: ubuntu-latest
     permissions:
-      actions: write
+      actions: write # 显式声明需要写入权限
     steps:
-      - name: 精准清理三类任务记录
+      - name: 强制清理所有旧记录
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          # 1. 清理：自动生成越狱源索引
-          echo "清理索引记录..."
-          gh run list --workflow "自动生成越狱源索引" --limit 100 --json databaseId -q '.[1:].databaseId' | xargs -I{} gh run delete {} || true
+          # 获取所有工作流的路径（例如 main.yml, cleanup.yml 等）
+          workflows=$(gh api repos/${{ github.repository }}/workflows --jq '.workflows[].path | split("/") | last')
           
-          # 2. 清理：自动清理所有运行日志
-          echo "清理自身记录..."
-          gh run list --workflow "自动清理所有运行日志" --limit 100 --json databaseId -q '.[1:].databaseId' | xargs -I{} gh run delete {} || true
+          for wf in $workflows; do
+            echo "正在清理工作流: $wf"
+            # 找到该工作流下除最新 1 条外的所有 ID 并删除
+            # 注意：这里去掉了 || true，失败会报错，方便我们排查
+            gh run list --workflow "$wf" --limit 100 --json databaseId -q '.[1:].databaseId' | xargs -I{} gh run delete {}
+          done
           
-          # 3. 清理：GitHub Pages 部署记录 (这是最难删的)
-          echo "清理部署记录..."
-          gh run list --workflow "pages-build-deployment" --limit 100 --json databaseId -q '.[1:].databaseId' | xargs -I{} gh run delete {} || true
-          
-          echo "✅ 清理指令已全部发出！"
+          # 专门针对系统自带的部署任务进行清理
+          echo "正在清理系统部署任务..."
+          gh run list --workflow "pages-build-deployment" --limit 100 --json databaseId -q '.[1:].databaseId' | xargs -I{} gh run delete {}
