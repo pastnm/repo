@@ -14,3 +14,19 @@ Author: Reposi3 <reposithree@gmail.com>
 Depiction: https://supermamon.github.io/Reposi3/depictions/?p=com.supermamon.oldpackage
 Name: Old Package
 
+Package: zp.dopamine.blacklist
+Version: 0.0.1-1
+Architecture: iphoneos-arm64
+Maintainer: zqbb
+Depends: mobilesubstrate (>= 0.9.5000)
+Filename: ./debs/iphoneos-arm64/DopamineBlackList_0.0.1-1_iphoneos-arm64.deb
+Size: 36302
+MD5sum: 5cfc5b05854967e9c50fb16c866b19f4
+SHA1: 85f3c6dc9e8b333c66e8b5d872428519b6bc3c49
+SHA256: 6c5d16c58640a8f7c58b206d7590ef36e33d75416a2fc0f8ad921c0e8015327a
+Section: Tweaks
+Description: 皮版Dopamine屏蔽注入.
+Author: zqbb
+Name: DopamineBlackList
+Sileodepiction: https://rootless.002599.xyz/web/zp.dopamine.blacklist
+
