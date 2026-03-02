@@ -1,8 +1,8 @@
-Origin: Aatoz
-Label: Aatoz
+Origin: 枫叶
+Label: 枫叶
 Suite: stable
 Version: 1.0
 Codename: ios
 Architectures: iphoneos-arm
 Components: main
-Description: Aatoz's Repo
+Description: 自用源备份
