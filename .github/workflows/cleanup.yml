@@ -1,26 +1,43 @@
 name: 自动清理所有运行日志
 
 on:
-  workflow_run:
-    workflows: ["pages build and deployment", "自动生成越狱源索引"]
-    types:
-      - completed
+  workflow_dispatch: # 支持手动点击运行
   schedule:
-    - cron: '0 0 * * *'
-  workflow_dispatch:
+    - cron: '0 0 * * *' # 每天凌晨自动清理
+  workflow_run:
+    workflows: ["*"] # 只要有任何任务完成，就触发清理
+    types: [completed]
 
 jobs:
   delete-runs:
     runs-on: ubuntu-latest
     permissions:
-      actions: write
+      actions: write # 必须有写入权限才能执行删除
     steps:
-      - name: 彻底清理旧记录 (每个工作流仅保留最新1条)
+      - name: 批量清理旧记录
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          # 清理部署日志：列出所有记录，跳过第1个最新的，删除剩下的
-          gh run list --workflow "pages build and deployment" --limit 100 --json databaseId -q '.[1:].databaseId' | xargs -I{} gh run delete {} || echo "无多余部署记录"
+          # 第一步：获取仓库中所有的工作流 ID
+          workflow_ids=$(gh api repos/${{ github.repository }}/workflows --jq '.workflows[].id')
           
-          # 清理索引日志：列出所有记录，跳过第1个最新的，删除剩下的
-          gh run list --workflow "自动生成越狱源索引" --limit 100 --json databaseId -q '.[1:].databaseId' | xargs -I{} gh run delete {} || echo "无多余索引记录"
+          for id in $workflow_ids; do
+            # 获取该工作流的名称（方便日志查看）
+            name=$(gh api repos/${{ github.repository }}/workflows/$id --jq '.name')
+            echo "🔎 正在检查工作流: [$name] (ID: $id)"
+            
+            # 获取除最新的 1 条之外的所有运行记录 ID
+            # 如果你想要连最后一条也删掉（不建议），可以把 [1:] 改成 [0:]
+            run_ids=$(gh run list --workflow "$id" --json databaseId --limit 100 -q '.[1:].databaseId')
+            
+            if [ -z "$run_ids" ]; then
+              echo "✅ 无需清理：该工作流只有 1 条或没有记录。"
+            else
+              for run_id in $run_ids; do
+                echo "🗑️ 正在删除旧记录: $run_id"
+                gh run delete "$run_id"
+              done
+            fi
+            echo "-----------------------------------"
+          done
+          echo "🎉 所有旧日志清理完毕！"
