@@ -12,33 +12,32 @@ jobs:
     permissions:
       actions: write
     steps:
-      - name: 批量清理冗余记录
+      - name: 强制清理冗余记录
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          # 1. 获取所有工作流 ID（包括索引、部署和清理任务本身）
-          WFS=$(gh api repos/${{ github.repository }}/workflows --jq '.workflows[].id')
+          # 1. 获取所有工作流的 ID 列表
+          workflow_ids=$(gh api repos/${{ github.repository }}/workflows --jq '.workflows[].id')
           
-          # 2. 额外加入系统内置的部署任务名称
-          WFS="$WFS pages-build-deployment"
+          # 2. 额外手动加入系统内置的 Pages 任务名称，确保它也能被清理
+          all_targets="$workflow_ids pages-build-deployment"
           
-          for wf in $WFS; do
-            echo "--- 正在检查任务: $wf ---"
+          for wf in $all_targets; do
+            echo "--- 正在扫描任务: $wf ---"
             
-            # 获取该任务除最新一条外的所有 ID，且显式排除“当前正在运行”的这个清理任务 ID
-            # tail -n +2 的作用是跳过第一行（即保留最新的一条）
-            RUNS=$(gh run list --workflow "$wf" --limit 100 --json databaseId -q ".[] | select(.databaseId != ${{ github.run_id }}) | .databaseId" | tail -n +2)
+            # 获取该任务下所有记录 ID，排除掉当前正在运行的清理任务，并跳过最新的那一条
+            # awk 'NR>1' 的作用是：保留第1行（最新的一条），从第2行开始处理
+            run_ids=$(gh run list --workflow "$wf" --limit 100 --json databaseId -q ".[] | select(.databaseId != ${{ github.run_id }}) | .databaseId" | awk 'NR>1')
             
-            if [ -z "$RUNS" ]; then
-              echo "没有需要清理的旧记录。"
-              continue
+            if [ -z "$run_ids" ]; then
+              echo "该任务没有多余的旧记录需要清理。"
+            else
+              for rid in $run_ids; do
+                if [ -n "$rid" ]; then
+                  echo "正在清理 ID: $rid"
+                  gh run delete "$rid" || true
+                fi
+              done
             fi
-            
-            for rid in $RUNS; do
-              echo "正在强行删除记录: $rid"
-              # 使用 || true 确保即使某一条删不掉（比如被系统锁定），脚本也会继续往下走而不报错
-              gh run delete "$rid" || true
-            done
           done
-          
-          echo "✅ 清理指令已全部完成，列表即将变清爽！"
+          echo "✅ 清理完成！你的 Actions 页面现在应该非常干净了。"
