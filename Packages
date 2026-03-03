@@ -50,6 +50,25 @@ Author: SquidForce, Backup
 Name: CopyVault(激活码版)
 Sileodepiction: https://lclrc.github.io/repo/depictions/native/cn.octoforce.copyvault/depiction.json
 
+Package: cn.octoforce.squidextender
+Version: 3.7.4
+Architecture: iphoneos-arm64e
+Maintainer: SquidForce, Backup
+Installed-Size: 9988
+Pre-Depends: rootless-compat (>= 0.9)
+Depends: mobilesubstrate, preferenceloader, com.opa334.libsandy
+Conflicts: com.squidforce.squidextender
+Filename: ./debs/iphoneos-arm64e/SquidExtender(激活码版)_3.7.4_iphoneos-arm64e.deb
+Size: 2235696
+MD5sum: 3ab1116e9849f5dbcb70ee88aee896be
+SHA1: d5bb158f5a5c842a744c2072de5064a1553c5010
+SHA256: 755b8ac426ab9e7cb3af153466926b855221793c89007fec1a9c0b405d41958a
+Section: Tweaks
+Description: 激活码用户或需要激活码的用户安装这个，非激活码用户不要安装！！Do not install if you do not have an activation code!!! Extend your keyboard to be more POWERFULL!
+Author: SquidForce, Backup
+Name: SquidExtender(激活码版)
+Sileodepiction: https://lclrc.github.io/repo/depictions/native/cn.octoforce.squidextender/depiction.json
+
 Package: cn.octoforce.squidgesturepro
 Version: 2.7.6-1
 Architecture: iphoneos-arm64
@@ -62,6 +81,25 @@ Size: 2748430
 MD5sum: f7d620940badf1504213ca9eee437128
 SHA1: 02a05a784c15b4eb4361d425d730596d9e2faf0b
 SHA256: d720862de84d7858f4530338acdf5ff1a4a83917f5c76300cbf975beb0382235
+Section: Tweaks
+Description: Gestures，激活码用户或需要激活码的用户安装此包，非激活码用户不要装!
+Author: SquidForce, Backup
+Name: SquidGesturePro(激活码)
+Sileodepiction: https://lclrc.github.io/repo/depictions/native/cn.octoforce.squidgesturepro/depiction.json
+
+Package: cn.octoforce.squidgesturepro
+Version: 2.7.6-1
+Architecture: iphoneos-arm64e
+Maintainer: SquidForce, Backup
+Installed-Size: 6620
+Pre-Depends: rootless-compat (>= 0.9)
+Depends: mobilesubstrate, preferenceloader, firmware (>= 14.0)
+Conflicts: com.lclrc.squidgesture, com.lclrc.squidgesturepro
+Filename: ./debs/iphoneos-arm64e/SquidGesturePro(激活码)_2.7.6-1_iphoneos-arm64e.deb
+Size: 1741316
+MD5sum: 21670e6f21df958e487a2e3a9939872b
+SHA1: f5bf986daddd2dd6c619751dfa4a29c2df477ce1
+SHA256: 5a3a804730682d8b3d926a23e803ae3dd95deee106400fa4949b3b4f92458876
 Section: Tweaks
 Description: Gestures，激活码用户或需要激活码的用户安装此包，非激活码用户不要装!
 Author: SquidForce, Backup
@@ -176,6 +214,23 @@ Icon: https://rootless.002599.xyz/web/icon/cn.zqbb.orzfolder
 Name: Hello Folder
 Sileodepiction: https://rootless.002599.xyz/web/cn.zqbb.orzfolder
 
+Package: com.0xkuj.safarix
+Version: 1.9.9.1
+Architecture: iphoneos-arm64e
+Maintainer: 0xkuj
+Installed-Size: 928
+Pre-Depends: rootless-compat (>= 0.9)
+Depends: mobilesubstrate (>= 0.9.5000), preferenceloader, firmware (>= 15.0)
+Filename: ./debs/iphoneos-arm64e/SafariX_1.9.9.1_iphoneos-arm64e.deb
+Size: 312160
+MD5sum: d29268e1a9f0e8f59674ae8291f43936
+SHA1: 14e17d73e91277b47529d00b8c3798ae17b8b665
+SHA256: 082d12e22f3334acd100fd9edd6172654fc61aa1e358d2b7609bd9e703ca65af
+Section: Tweaks
+Description: Safari Essential Features
+Author: 0xkuj
+Name: SafariX
+
 Package: com.82flex.noredirect
 Version: 2.1
 Architecture: iphoneos-arm64
@@ -208,6 +263,40 @@ Section: Tweaks
 Description: Stop specified apps from redirecting to App Store, Safari or other apps.
 Author: Lessica <82flex@gmail.com>
 Name: No Redirect
+
+Package: com.82flex.singlevpn
+Version: 2.1-2
+Architecture: iphoneos-arm64e
+Maintainer: 82Flex <82flex@gmail.com>
+Installed-Size: 420
+Pre-Depends: rootless-compat (>= 0.9)
+Depends: firmware (>= 14.0), mobilesubstrate
+Filename: ./debs/iphoneos-arm64e/Single VPN_2.1-2_iphoneos-arm64e.deb
+Size: 34596
+MD5sum: 7d6b675248ea6cec45f495f618323b50
+SHA1: 4ff8d88c558b4f24954d8348fe71332c67140a6b
+SHA256: bbea008863439d5801e27afba28b51fc9c6dba4910660d6eb8415b4d79a60bcc
+Section: Tweaks
+Description: Combine VPN state and wireless state into one icon.
+Author: 82Flex <82flex@gmail.com>
+Name: Single VPN
+
+Package: com.82flex.touchvis
+Version: 4.0.2
+Architecture: iphoneos-arm64e
+Maintainer: Lessica <82flex@gmail.com>
+Installed-Size: 4360
+Pre-Depends: rootless-compat (>= 0.9)
+Depends: firmware (>= 15.0), mobilesubstrate, preferenceloader
+Filename: ./debs/iphoneos-arm64e/Touch-Viz_4.0.2_iphoneos-arm64e.deb
+Size: 916292
+MD5sum: dd7007be2dc9fe83d05961988381de61
+SHA1: ed4c3c1e9fc8bfe0e0047ee49adeafc7ac50bcd8
+SHA256: 390ccf610095263d85b6123fad0785c93cfe75594cfa16bc83597bb5f64bc31b
+Section: Tweaks
+Description: Display your touch interactions!
+Author: Lessica <82flex@gmail.com>
+Name: Touch-Viz
 
 Package: com.axs.adguard
 Version: 0.0.1
@@ -427,6 +516,24 @@ Size: 1330398
 MD5sum: bed139f52395ff2ad5d7c2b7e50f6ae9
 SHA1: 1f6a2f47979db90bd684350f1c21f1a9b7bc416d
 SHA256: e95c73f46a377796ee92360e1679a46c0c08aabb79128a90a1426b5eb5861ed1
+Section: Tweaks
+Description: Pin screenshots on the screen.
+Author: Jonathan Winger-lang
+Name: Snapper 3
+
+Package: com.jontelang.snapper3
+Version: 1.2.1
+Architecture: iphoneos-arm64e
+Maintainer: Jonathan Winger-lang
+Installed-Size: 4148
+Pre-Depends: rootless-compat (>= 0.9)
+Depends: mobilesubstrate, firmware (>= 14.0), preferenceloader
+Conflicts: com.jontelang.snapper, com.jontelang.snapper2.packix, xyz.cypwn.snapperfr33
+Filename: ./debs/iphoneos-arm64e/Snapper 3_1.2.1_iphoneos-arm64e.deb
+Size: 1018764
+MD5sum: 1b328ff2e54c15896802cc40f2fcc3ab
+SHA1: b5a5c49b45a89e53c5abb6c0fc40a6489af2d05e
+SHA256: 5e3d4fbd7a6e8bf3cb8891a4e7218e52296eb5b1e32df5befdbb07f803ec4368
 Section: Tweaks
 Description: Pin screenshots on the screen.
 Author: Jonathan Winger-lang
@@ -740,6 +847,24 @@ Description: Remove App Library View.
 Author: SquidForce
 Name: SimpleHome青春版 - 只禁用资源库
 
+Package: com.squidforce.simplehomelite
+Version: 1.0.0
+Architecture: iphoneos-arm64e
+Maintainer: SquidForce
+Installed-Size: 168
+Pre-Depends: rootless-compat (>= 0.9)
+Depends: mobilesubstrate
+Conflicts: info.adolfoi.simplehome
+Filename: ./debs/iphoneos-arm64e/SimpleHome青春版 - 只禁用资源库_1.0.0_iphoneos-arm64e.deb
+Size: 4728
+MD5sum: 267d36e0b0796802b4cc97d440af2152
+SHA1: 9af82ae0b0ddf65bb3e5af048145cb123d6ae3fe
+SHA256: ae821c59cb12efc7ba4c480adfc3654e97149bf4ab4f7093c34559b8c1483523
+Section: Tweaks
+Description: Remove App Library View.
+Author: SquidForce
+Name: SimpleHome青春版 - 只禁用资源库
+
 Package: com.tigisoftware.filza64bit
 Version: 4.0.1-4
 Architecture: iphoneos-arm64
@@ -792,6 +917,24 @@ Author: Ethan Whited
 Icon: https://s1.imagehub.cc/images/2025/12/31/c000ad65b1c4893e99b9813d3108fc73.png
 Name: FloatingDockXVI
 
+Package: com.wkk.tinge
+Version: 1.2.2
+Architecture: iphoneos-arm64e
+Maintainer: P2KDev <p2kdev@gmail.com>
+Installed-Size: 436
+Pre-Depends: rootless-compat (>= 0.9)
+Depends: firmware (>= 15.0), mobilesubstrate, preferenceloader, org.thebigboss.libcolorpicker
+Filename: ./debs/iphoneos-arm64e/Tinge_1.2.2_iphoneos-arm64e.deb
+Size: 43252
+MD5sum: d836118f4016a02fea5a670240649a30
+SHA1: 92543bd666174254289af381b941b72022fb80a0
+SHA256: ca11dacf29de5593d7e473e3915097a543255facfd43911682a1577ffd6f393c
+Section: Tweaks
+Description: 好看的角标，有能力请支持正版，已汉化。
+Author: P2KDev <p2kdev@gmail.com>
+Icon: https://s1.imagehub.cc/images/2025/12/26/e1773edb2bf04d92112a9b709efdf7be.png
+Name: Tinge
+
 Package: com.xybp888.callassist16.dopamine
 Version: 2.1.2
 Architecture: iphoneos-arm64
@@ -827,6 +970,22 @@ Author: xybp888
 Depiction: https://apt.htv123.com/view/562
 Name: 电话助手iOS16-正式版(Roothide)
 Sileodepiction: https://apt.htv123.com/sileo/562
+
+Package: com.yourepo.0xkuj.storeswitcher2rootless
+Version: 1.0.4
+Architecture: iphoneos-arm64e
+Maintainer: 0xkuj <0xkujz@gmail.com>
+Pre-Depends: rootless-compat (>= 0.9)
+Depends: firmware (>= 11)
+Filename: ./debs/iphoneos-arm64e/StoreSwitcher 2 (rootless)_1.0.4_iphoneos-arm64e.deb
+Size: 14528
+MD5sum: 970fa36d07d8f37fe4fb9524a85b59e6
+SHA1: 1ce77a622e9934137e9f70f8ca2d02eedbc7ca0a
+SHA256: d6e8cd230d4d216d0ccb86a00e6c969485db8041d84abc92e2eb81d4649c1896
+Section: Tweaks
+Description: Adds a button to switch account in App Store account page on iOS 11+.
+Author: 0xkuj <0xkujz@gmail.com>
+Name: StoreSwitcher 2 (rootless)
 
 Package: com.zqbb.limitcharging
 Version: 1.0.8
@@ -901,6 +1060,23 @@ Description: Quickly switch the type of cellular data 2/3/4/5G currently in use 
 Author: Netskao
 Name: CCCellularRate-Rootless
 
+Package: org.coolstar.sileo
+Version: 2.5.1-11
+Architecture: iphoneos-arm64e
+Maintainer: Amy While <me@anamy.gay>
+Depends: firmware (>= 11.0), firmware (>= 12.2) | org.swift.libswift (>= 5.0), coreutils (>= 8.30-1), dpkg (>= 1.19.4-1), apt (>= 1.8.2), libzstd1
+Filename: ./debs/iphoneos-arm64e/Sileo_2.5.1-11_iphoneos-arm64e.deb
+Size: 3946576
+MD5sum: 80f17537a282f639ce2ce1cbe2ae8ef0
+SHA1: 5441eb1e9513a47ceeb7cf793b97b30ad670d070
+SHA256: 9d4bb87d56c2fefa3fb764768ec58cbdc84ea4a26270b0a78257365b989ab7ea
+Section: Packaging
+Description: A modern APT package manager frontend
+Author: Amy While <me@anamy.gay>
+Icon: https://getsileo.app/img/icon.png
+Name: Sileo
+Sileodepiction: https://featuredpage.getsileo.app/depiction.json
+
 Package: preferenceloader.rootless.top
 Version: 2.2.6.6
 Architecture: iphoneos-arm64
@@ -935,6 +1111,26 @@ Description: 完美版。
 Author: Domo <domo@rambler.ru>
 Icon: https://siieo.github.io/sileodepictions/CocoaTop/icon.png
 Name: CocoaTop64
+
+Package: wiki.qaq.chromatic.rootless
+Version: 3.0-rootless-release-1724982255.ec2e0f1
+Architecture: iphoneos-arm64e
+Maintainer: Saily Team <support.0xa1@qaq.wiki>
+Pre-Depends: rootless-compat (>= 0.9), firmware (>= 13.0), dpkg, uikittools
+Conflicts: wiki.qaq.chromatic
+Filename: ./debs/iphoneos-arm64e/Saily (Rootless)_3.0-rootless-release-1724982255.ec2e0f1_iphoneos-arm64e.deb
+Size: 3402448
+MD5sum: 462949886cba30bc68e0314d6c3c45cf
+SHA1: fe0a5f54a513e2b7cb0f29ede399f43f9cfa0de7
+SHA256: f9429f5c51221c40bc5725f599aed2a587c6b06b6883532c0027f63c3baf3750
+Section: Applications
+Homepage: https://sailyteam.github.io/Saily/index.html
+Description: Modern. Fast. Beautiful.
+Author: Saily Team <support.0xa1@qaq.wiki>
+Depiction: https://sailyteam.github.io/Saily/index.html
+Icon: https://sailyteam.github.io/Saily/Resources/icon.png
+Name: Saily (Rootless)
+Website: https://sailyteam.github.io/Saily/index.html
 
 Package: ws.hbang.alderis
 Version: 1.2.3-8+debug
