@@ -192,6 +192,23 @@ Description: Stop specified apps from redirecting to App Store, Safari or other 
 Author: Lessica <82flex@gmail.com>
 Name: No Redirect
 
+Package: com.82flex.noredirect
+Version: 2.1
+Architecture: iphoneos-arm64e
+Maintainer: Lessica <82flex@gmail.com>
+Installed-Size: 832
+Pre-Depends: rootless-compat (>= 0.9)
+Depends: firmware (>= 14.0), mobilesubstrate, preferenceloader, com.opa334.altlist, com.opa334.libsandy
+Filename: ./debs/iphoneos-arm64e/No Redirect_2.1_iphoneos-arm64e.deb
+Size: 88448
+MD5sum: 595600e7c1c994f51d53c8b706512368
+SHA1: ce1ca3829affea0bb974185a0d3b0dcf70bf1250
+SHA256: c6353ac5517644e7301c343f03e1f2719f6afaa2c6bf6dd9e1d47ac5c66f611d
+Section: Tweaks
+Description: Stop specified apps from redirecting to App Store, Safari or other apps.
+Author: Lessica <82flex@gmail.com>
+Name: No Redirect
+
 Package: com.axs.adguard
 Version: 0.0.1
 Architecture: iphoneos-arm64
@@ -238,6 +255,23 @@ Size: 5146
 MD5sum: e8ebbfc761058cec46f0ec6b59737537
 SHA1: 3047ab1d2aa7dd9705ed500f09b792a03ba5c030
 SHA256: fad6925b7716b82596799e6cd8f23039cd407651905e45d78536906d5696982c
+Section: Tweaks
+Description: Disables passcode after a respring. This version does NOT modify system file. It's safe to use. 在注销前是解锁状态的情况下，注销后自动跳过人脸或指纹识别到桌面。
+Author: Brend0n <brendonjkding@126.com>
+Name: NoPassAfterRespring (Safe)
+
+Package: com.brend0n.nopassafterrespringsafe
+Version: 0.0.3
+Architecture: iphoneos-arm64e
+Maintainer: Brend0n <brendonjkding@126.com>
+Installed-Size: 168
+Pre-Depends: rootless-compat (>= 0.9)
+Depends: mobilesubstrate
+Filename: ./debs/iphoneos-arm64e/NoPassAfterRespring (Safe)_0.0.3_iphoneos-arm64e.deb
+Size: 3372
+MD5sum: c745734ab52f53d3f922fa44328af6d8
+SHA1: 6f1ad3c9b02fe972f8c7cbbf72469828e4dfedfb
+SHA256: 13fef1998708e3d2abf15b58d4aee0ee50237bc32f5ee470c349484d0e531fa0
 Section: Tweaks
 Description: Disables passcode after a respring. This version does NOT modify system file. It's safe to use. 在注销前是解锁状态的情况下，注销后自动跳过人脸或指纹识别到桌面。
 Author: Brend0n <brendonjkding@126.com>
@@ -346,6 +380,26 @@ Description: NotificationsGroupCount：仿 iOS18.1，在锁屏通知堆栈中添
 Author: 0xkuj
 Name: 通知组计数(RootHide)
 
+Package: com.hitori.misaki
+Version: 2.2
+Architecture: iphoneos-arm64e
+Maintainer: Hitori <mikasa-san@outlook.jp>
+Installed-Size: 1049
+Pre-Depends: rootless-compat (>= 0.9)
+Depends: mobilesubstrate, preferenceloader, ws.hbang.alderis
+Filename: ./debs/iphoneos-arm64e/Misaki_2.2_iphoneos-arm64e.deb
+Size: 301144
+MD5sum: 8a43e6e575c28b22c8f6e193e64825d9
+SHA1: 5909a6836dda9f6ed7842da1c35536b5033d361e
+SHA256: 7a1c9659d9027f41a3260c12b2ae8502a7f4851f3d9372163bff4e5ad4e033fc
+Section: Tweaks
+Description: Customize your iOS 15 & 16 experience with Misaki. customization options to make your iPhone truly yours.
+Tag: cydia::commercial, compatible_min::ios15.0
+Author: Hitori <mikasa-san@outlook.jp>
+Depiction: https://chariz.com/buy/misaki
+Icon: https://img.chariz.cloud/icon/misaki/icon@3x.png
+Name: Misaki
+
 Package: com.hk.atria.cn.rl
 Version: 1.4.1
 Architecture: iphoneos-arm64
@@ -393,6 +447,23 @@ Section: Control Center (Modules)
 Description: Enable system-wide performance HUD from the control center.
 Author: khanhduytran0
 Name: CAPerfHUDModule
+
+Package: com.ketty.meowtimemachine
+Version: 0.0.1-106+debug
+Architecture: iphoneos-arm64e
+Maintainer: 预言小猫
+Installed-Size: 6912
+Pre-Depends: rootless-compat (>= 0.9)
+Depends: firmware (>= 14.0)
+Filename: ./debs/iphoneos-arm64e/MeowTimeMachine_0.0.1-106+debug_iphoneos-arm64e.deb
+Size: 4568940
+MD5sum: 0b68b7725b518fd089873e4b61ed47db
+SHA1: 487d0ab792a2944f43e663057c58f581408b8abb
+SHA256: 31846a2c7fe2bfabc469dffce1fc6117651de0fd06b390f6fe25c35499c0401a
+Section: Utilities
+Description: An awesome SwiftUI application!
+Author: 预言小猫
+Name: MeowTimeMachine
 
 Package: com.kingpuffdaddi.control-center.ccvpn
 Version: 1.0.6
@@ -463,6 +534,25 @@ Size: 94394
 MD5sum: a9e3a71b9ab24943cc686ed99ee1157b
 SHA1: 8002c6c9a9732cb8a503c57e8ea3cef3bb4a4669
 SHA256: 311ea5a2fc48bc324853897270aed40950f81ea8b7fa88da4d80d7e89eeb01a0
+Section: Development
+Description: An awesome library of some sort!!
+Tag: role::developer
+Author: MrGcGamer
+Name: LibGcUniversal
+
+Package: com.mrgcgamer.libgcuniversal
+Version: 1.7.0
+Architecture: iphoneos-arm64e
+Maintainer: MrGcGamer
+Installed-Size: 380
+Pre-Depends: rootless-compat (>= 0.9)
+Depends: firmware (>= 14.0) | ws.hbang.alderis, firmware (>= 12.0)
+Provides: com.mrgcgamer.libgcimagepicker, com.mrgcgamer.libgccolorpicker
+Filename: ./debs/iphoneos-arm64e/LibGcUniversal_1.7.0_iphoneos-arm64e.deb
+Size: 53096
+MD5sum: 8b178e239701c79a953ee05196f44509
+SHA1: db2f37a80355f54e521cee7b5c2600b02455e0c7
+SHA256: f73a393fa52a5ef9737641fab8b088cb4d9b1960ac768b654c3b171cc03a4368
 Section: Development
 Description: An awesome library of some sort!!
 Tag: role::developer
@@ -607,6 +697,25 @@ Size: 103228
 MD5sum: 725660d65979053b78fade979130c7f9
 SHA1: 2f5e12ba149369a5558bcbc4f67fd1a4b10cda88
 SHA256: 6cc3bb3982fc297003e64c1c291f831b868b0520a0f13389a8fc54c9d37ee242
+Section: 越狱应用
+Description: 终端应用程序
+Author: lordscotland <admin@officialscheduler.com>
+Icon: https://sini921.github.io/repo/sileodepiction/icon/mterminal.png
+Name: MTerminal(rootless)
+Sileodepiction: https://sini921.github.io/repo/sileodepiction/mterminal/js.json
+
+Package: com.sini.mterminal
+Version: 1.6
+Architecture: iphoneos-arm64e
+Maintainer: D.F (MTAC) <mtac@mtac.app>
+Installed-Size: 272
+Pre-Depends: rootless-compat (>= 0.9)
+Depends: coreutils, firmware (>= 11.0), system-cmds, zsh
+Filename: ./debs/iphoneos-arm64e/MTerminal(rootless)_1.6_iphoneos-arm64e.deb
+Size: 85636
+MD5sum: 0e32de9a3630df4b7197ee9a7376cdbc
+SHA1: 5030ab0c61f5412ce0c4c98ac7dddec70df4fa66
+SHA256: 1c5d176183a66396c382e5aad7e8967c458053fd7cdf64aa5ce59c5d76c504a6
 Section: 越狱应用
 Description: 终端应用程序
 Author: lordscotland <admin@officialscheduler.com>
