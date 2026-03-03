@@ -939,6 +939,23 @@ Author: Ethan Whited
 Icon: https://s1.imagehub.cc/images/2025/12/31/c000ad65b1c4893e99b9813d3108fc73.png
 Name: FloatingDockXVI
 
+Package: com.wkk.pancake
+Version: 2.3
+Architecture: iphoneos-arm64e
+Maintainer: AnthoPak <anthopakdev@gmail.com>
+Pre-Depends: rootless-compat (>= 0.9)
+Depends: firmware (>= 11.0), mobilesubstrate, ws.hbang.common (>= 1.14), com.opa334.altlist, firmware (>= 11.0)
+Filename: ./debs/iphoneos-arm64e/PanCake_2.3_iphoneos-arm64e.deb
+Size: 115620
+MD5sum: edb996ace6250ffaf3331fa44379e55f
+SHA1: fb4bccf6ea089b40affecf8d55e04b2e1f5ff431
+SHA256: 8c95c58ac8407e601cdf1ba4dc4592c5f13cf1db7c8a26945edb1aeede1e5948
+Section: Tweaks
+Description: 全局右滑手势，已汉化。
+Author: AnthoPak <anthopakdev@gmail.com>
+Icon: https://sini921.github.io/repo/sileodepiction/icon/pancake.png
+Name: PanCake
+
 Package: com.wkk.tinge
 Version: 1.2.2
 Architecture: iphoneos-arm64e
@@ -1116,6 +1133,62 @@ Section: System
 Description: load preferences in style
 Author: Dustin Howett
 Name: PreferenceLoader - rootless (top)
+
+Package: preferenceloader.rootless.top
+Version: 2.2.6.6
+Architecture: iphoneos-arm64e
+Maintainer: zp,Dustin Howett
+Installed-Size: 337
+Pre-Depends: rootless-compat (>= 0.9)
+Conflicts: preferenceloader, preferenceloader.rootless
+Replaces: preferenceloader
+Provides: preferenceloader (= 2.2.6)
+Filename: ./debs/iphoneos-arm64e/PreferenceLoader - rootless (top)_2.2.6.6_iphoneos-arm64e.deb
+Size: 15444
+MD5sum: 0cc83f22adfd3b2af8c94e2cc3b3e1cc
+SHA1: 6ab457cc72e999a73f74896a600a2c59eff491d7
+SHA256: c02bf38cf4d690ac10c7c724c6d98eb924d6259170b1ce4b7033d8e2b76d1456
+Section: System
+Description: load preferences in style
+Author: Dustin Howett
+Name: PreferenceLoader - rootless (top)
+
+Package: roothide
+Version: 0.0.9
+Architecture: iphoneos-arm64e
+Essential: yes
+Maintainer: roothide
+Installed-Size: 936
+Depends: libiosexec1 (>= 1.3.1-2)
+Filename: ./debs/iphoneos-arm64e/roothide core_0.0.9_iphoneos-arm64e.deb
+Size: 40972
+MD5sum: 8c14912d5e4490a9df1f5ace39fd67c0
+SHA1: bfdd8fbe095de356357d86bccb9b8a5cc6d6dcc4
+SHA256: 81f6f7f8177678a795402bca28ef60a3b0338cb658dfc87bbb13265e755f0e27
+Section: System
+Priority: required
+Description: roothide core package
+Author: roothide
+Name: roothide core
+
+Package: roothide.patches.filza
+Version: 0.5-4
+Architecture: iphoneos-arm64e
+Maintainer: roothide
+Installed-Size: 268
+Depends: com.roothide.patchloader
+Recommends: com.tigisoftware.filza64bit (= 4.0.1-4~roothide)
+Conflicts: com.tigisoftware.filza64bit (>> 4.0.1-4~roothide), com.tigisoftware.filza64bit (<< 4.0.1-4~roothide)
+Provides: patches-com.tigisoftware.filza64bit (= 4.0.1-4~roothide)
+Filename: ./debs/iphoneos-arm64e/Patches for Filza 64bit_0.5-4_iphoneos-arm64e.deb
+Size: 31036
+MD5sum: 910d86c84af9b72e10034df558c92b5d
+SHA1: ba7cd0afbfe26f4fcee4ac0d3c5cc0ac73d8052f
+SHA256: 83eeaa3fbc07d5c0142b6e1b338960dd8253ecd4e4eafa613050a4a1f1154d6f
+Section: RootHide Patches
+Description: RootHide Dynamic Patches For Filza
+Author: roothide
+Name: Patches for Filza 64bit
 
 Package: ru.domo.cocoatop64
 Version: 2.2.4-2
