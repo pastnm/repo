@@ -793,6 +793,28 @@ Author: opa334
 Depiction: http://moreinfo.thebigboss.org/moreinfo/depiction.php?file=ccsupportDp
 Name: CCSupport
 
+Package: com.opa334.libsandy
+Version: 1.1.5
+Architecture: iphoneos-arm64e
+Maintainer: BigBoss <bigboss@thebigboss.org>
+Installed-Size: 258
+Depends: firmware (>= 8.0), mobilesubstrate (>= 0.9.5000)
+Conflicts: ws.hbang.stopcrashingpls (<= 1.0.2)
+Filename: ./debs/iphoneos-arm64e/libSandy_1.1.5_iphoneos-arm64e.deb
+Size: 12196
+MD5sum: eea24071c6fbea2b254bbfccd106f61c
+SHA1: 996a0ea32645a5e06890485dc44e13d74705df84
+SHA256: 4f47647a1beac5be6a2f6be3df8492002682d0e7df7a00b3e89a3fb7b3c6cbfe
+Section: System
+Homepage: http://moreinfo.thebigboss.org/moreinfo/depiction.php?file=libsandyDp
+Description: Securely extend the sandbox of system processes and user applications
+Tag: purpose::extension, role::developer
+Author: opa334 <opa334@protonmail.com>
+Depiction: http://moreinfo.thebigboss.org/moreinfo/depiction.php?file=libsandyDp
+Dev: opa334
+Name: libSandy
+Sponsor: thebigboss.org <http://thebigboss.org>
+
 Package: com.sini.mterminal
 Version: 1.6
 Architecture: iphoneos-arm64
