@@ -836,6 +836,40 @@ Dev: opa334
 Name: libundirect
 Sponsor: thebigboss.org <http://thebigboss.org>
 
+Package: com.roothide.manager
+Version: 1.3.8
+Architecture: iphoneos-arm64e
+Maintainer: roothide
+Installed-Size: 1108
+Depends: firmware (>= 15.0)
+Filename: ./debs/iphoneos-arm64e/RootHide Manager_1.3.8_iphoneos-arm64e.deb
+Size: 752240
+MD5sum: 4dc16ace8b727beb4085071d4c57d026
+SHA1: 9fe74b320b179aadf533188b54e84677dfa85ebf
+SHA256: 416d64a44bb7bf1282ec116112e72662ebfd3aaa8e79202722375a689d463e35
+Section: System
+Description: Configuare RootHide's Features
+Author: roothide
+Depiction: https://github.com/roothide/RootHideManagerApp
+Name: RootHide Manager
+Support: https://github.com/roothide/RootHideManagerApp
+
+Package: com.roothide.patchloader
+Version: 0.0.8
+Architecture: iphoneos-arm64e
+Maintainer: roothide
+Installed-Size: 132
+Filename: ./debs/iphoneos-arm64e/PatchLoader_0.0.8_iphoneos-arm64e.deb
+Size: 3824
+MD5sum: 0d604a431558f1e1f6f2beda3e552e95
+SHA1: 7a17299572521cbe8b385f60c5cad01d0de24a9a
+SHA256: de1b187a283012e3c4c6969da87dc620813174a06cd369c18704e3c00fdba94b
+Section: System
+Description: RootHide Dynamic Patches Loader
+Tag: role::developer
+Author: roothide
+Name: PatchLoader
+
 Package: com.sini.mterminal
 Version: 1.6
 Architecture: iphoneos-arm64
@@ -959,6 +993,26 @@ Description: 仅支持iOS16的最好用的悬浮Dock，已汉化。
 Author: Ethan Whited
 Icon: https://s1.imagehub.cc/images/2025/12/31/c000ad65b1c4893e99b9813d3108fc73.png
 Name: FloatingDockXVI
+
+Package: com.wkk.onesettings
+Version: 2.2
+Architecture: iphoneos-arm64e
+Maintainer: wkk
+Installed-Size: 1084
+Pre-Depends: rootless-compat (>= 0.9)
+Depends: firmware (>= 14.0), mobilesubstrate (>= 0.9.5000), com.mrgcgamer.libgcuniversal, preferenceloader
+Conflicts: com.shepgoba.settingswidgets, com.creaturecoding.shuffle
+Filename: ./debs/iphoneos-arm64e/OneSettings_2.2_iphoneos-arm64e.deb
+Size: 214388
+MD5sum: 7747a7d295ae55d313c0c143151ee63f
+SHA1: 5329953b8eeee1c76c24c840b2e12aedb24acbde
+SHA256: d7e7029e0eea334b3850503f45fb483292e451253247b29f2cec47ecb473493a
+Section: Tweaks
+Description: 插件归类，已汉化。
+Author: Nightwind
+Icon: https://sini921.github.io/repo/sileodepiction/icon/onesett.png
+Name: OneSettings
+Sponsor: wkk
 
 Package: com.wkk.pancake
 Version: 2.3
