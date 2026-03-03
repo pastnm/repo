@@ -815,6 +815,27 @@ Dev: opa334
 Name: libSandy
 Sponsor: thebigboss.org <http://thebigboss.org>
 
+Package: com.opa334.libundirect
+Version: 1.1.6
+Architecture: iphoneos-arm64e
+Maintainer: BigBoss <bigboss@thebigboss.org>
+Installed-Size: 177
+Pre-Depends: rootless-compat (>= 0.9)
+Filename: ./debs/iphoneos-arm64e/libundirect_1.1.6_iphoneos-arm64e.deb
+Size: 8052
+MD5sum: 828144484eabfa1be8f130bdc2da4dbe
+SHA1: 1a4055627a1b545263e8ac06853540861853b69c
+SHA256: 85addeee3de0e3d907bba8cb5f89570cdc1cdbdd3c9e767628b6bb5520f9dcc1
+Section: Development
+Homepage: http://moreinfo.thebigboss.org/moreinfo/depiction.php?file=libundirectDp
+Description: Patchfinder and rebinder for objc_direct methods
+Tag: purpose::library
+Author: opa334 <opa334@protonmail.com>
+Depiction: http://moreinfo.thebigboss.org/moreinfo/depiction.php?file=libundirectDp
+Dev: opa334
+Name: libundirect
+Sponsor: thebigboss.org <http://thebigboss.org>
+
 Package: com.sini.mterminal
 Version: 1.6
 Architecture: iphoneos-arm64
