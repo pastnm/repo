@@ -1825,11 +1825,11 @@ Pre-Depends: rootless-compat (>= 0.9)
 Depends: firmware (>= 14.0), firmware (<< 18.0), mobilesubstrate (>= 0.9.5000)
 Provides: dev.theos.orion (= 1.0.2)
 Filename: ./debs/iphoneos-arm64e/Orion Runtime (iOS 14 – 17)_1.0.2_iphoneos-arm64e.deb
-Size: 91544
-MD5sum: ac6bcfc466b7c8451c6a18fef39ebbe8
-SHA1: 9601e06827b54aad563315da283553cdfb645cca
-SHA256: e83367ad6f8eb1498714a9ae4fcbdec4d8f2e6dce133281b8a5a606764d979c6
-Section: System
+Size: 91352
+MD5sum: 544b7391c9d3bf14786192eabc094965
+SHA1: dd3d2a67290b448c3cbfb66a8412a684719a466e
+SHA256: c58b81189fd4dd127446cba99c1bd738ec76ff1cbc6148a5032e4aaa1bb9c61f
+Section: Tweaks
 Description: Runtime for tweaks built using Orion and Swift
 Tag: role::developer, compatible_min::ios14.0
 Author: Theos Team <support@theos.dev>
