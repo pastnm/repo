@@ -619,6 +619,23 @@ Author: fiore & p2kdev & 妖刀
 Name: CCBorder16(rootless)
 Sileodepiction: https://xiangfeidexiaohuo.github.io/sileodepiction/ccborder/js.json
 
+Package: com.dao.choicy
+Version: 1.5.3-4
+Architecture: iphoneos-arm64e
+Maintainer: opa334 <opa334@protonmail.com>
+Installed-Size: 1056
+Depends: mobilesubstrate, com.opa334.altlist (>=1.0.4), preferenceloader
+Conflicts: com.opa334.choicy
+Filename: ./debs/iphoneos-arm64e/Choicy(RootHide)-1.5.3-4-iphoneos-arm64e.deb
+Size: 161508
+MD5sum: 90122c8128edaf292f0c2b535c470e26
+SHA1: 2b385bea89bbc4deeb7d5deb83e35f833fac6769
+SHA256: 00700194942a4b10a703e1ee46fa7e53205e32b84be46bae4f21a55710d757dc
+Section: Tweaks
+Description: 高级插件配置器，可单独为每个程序启用/禁用插件等。
+Author: opa334 <opa334@protonmail.com>
+Name: Choicy(RootHide)
+
 Package: com.dao.icleanerpro
 Version: 7.10.0
 Architecture: iphoneos-arm64
