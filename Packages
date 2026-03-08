@@ -1339,23 +1339,6 @@ Architecture: iphoneos-arm64
 Maintainer: opa334 <opa334@protonmail.com>
 Installed-Size: 1136
 Depends: mobilesubstrate, com.opa334.altlist (>= 1.0.4), preferenceloader
-Filename: ./debs/Choicy_1.5.3-2_iphoneos-arm64.05-3月-2026-12-03-37.deb
-Size: 245886
-MD5sum: 30be3f09afc9818065b2eb3f786ca0c6
-SHA1: 0ce660dd330f2d6f0cdc9ad1f4d482b6e8e2d75d
-SHA256: 4061d9cb357b363649efb7f8cd299bc59da11b5b630e6aec1639fc167889bb69
-Section: Tweaks
-Description: Advanced Tweak Configuration!
-Author: opa334 <opa334@protonmail.com>
-Depiction: https://opa334.github.io/depic/Choicy/index.html
-Name: Choicy
-
-Package: com.opa334.choicy
-Version: 1.5.3-2
-Architecture: iphoneos-arm64
-Maintainer: opa334 <opa334@protonmail.com>
-Installed-Size: 1136
-Depends: mobilesubstrate, com.opa334.altlist (>= 1.0.4), preferenceloader
 Filename: ./debs/iphoneos-arm64/Choicy_1.5.3-2_iphoneos-arm64.deb
 Size: 150220
 MD5sum: fe5a7c5a27375324d86fbd446b8a5992
@@ -1812,27 +1795,6 @@ Section: Tweaks
 Description: Tinge 简体中文包(rootless)
 Author: 妖刀
 Name: Tinge 简体中文包(rootless)
-
-Package: dev.theos.orion14
-Version: 1.0.2
-Architecture: iphoneos-arm64e
-Maintainer: Theos Team <support@theos.dev>
-Installed-Size: 514
-Pre-Depends: rootless-compat (>= 0.9)
-Depends: firmware (>= 14.0), firmware (<< 18.0), mobilesubstrate (>= 0.9.5000)
-Provides: dev.theos.orion (= 1.0.2)
-Filename: ./debs/orion-runtime_1.0.2_iphoneos-arm64e.deb.deb
-Size: 91452
-MD5sum: b99bccea0b8d4845abb2329466b503f7
-SHA1: 9079b706412e3e7656c38034ad7ebc37582444fd
-SHA256: 555bb39274b72d7e125c50a5e44fc54427a875927d1abe15c17bec2d881cf0da
-Section: Tweaks
-Description: Runtime for tweaks built using Orion and Swift
-Tag: role::developer, compatible_min::ios14.0
-Author: Theos Team <support@theos.dev>
-Depiction: https://chariz.com/get/orion-runtime14
-Icon: https://img.chariz.cloud/icon/orion-runtime14/icon@3x.png
-Name: Orion Runtime (iOS 14 – 17)
 
 Package: dev.theos.orion14
 Version: 1.0.2
