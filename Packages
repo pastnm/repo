@@ -1816,6 +1816,27 @@ Depiction: https://chariz.com/get/orion-runtime14
 Icon: https://img.chariz.cloud/icon/orion-runtime14/icon@3x.png
 Name: Orion Runtime (iOS 14 – 17)
 
+Package: dev.theos.orion14
+Version: 1.0.2
+Architecture: iphoneos-arm64e
+Maintainer: Theos Team <support@theos.dev>
+Installed-Size: 514
+Pre-Depends: rootless-compat (>= 0.9)
+Depends: firmware (>= 14.0), firmware (<< 18.0), mobilesubstrate (>= 0.9.5000)
+Provides: dev.theos.orion (= 1.0.2)
+Filename: ./debs/iphoneos-arm64e/Orion Runtime (iOS 14 – 17)_1.0.2_iphoneos-arm64e.deb
+Size: 91544
+MD5sum: ac6bcfc466b7c8451c6a18fef39ebbe8
+SHA1: 9601e06827b54aad563315da283553cdfb645cca
+SHA256: e83367ad6f8eb1498714a9ae4fcbdec4d8f2e6dce133281b8a5a606764d979c6
+Section: System
+Description: Runtime for tweaks built using Orion and Swift
+Tag: role::developer, compatible_min::ios14.0
+Author: Theos Team <support@theos.dev>
+Depiction: https://chariz.com/get/orion-runtime14
+Icon: https://img.chariz.cloud/icon/orion-runtime14/icon@3x.png
+Name: Orion Runtime (iOS 14 – 17)
+
 Package: ellekit
 Version: 1.1.3-3
 Architecture: iphoneos-arm64e
