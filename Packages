@@ -1,0 +1,17 @@
+Package: com.25mao.wcplugins.rootless
+Version: 0.1-3
+Architecture: iphoneos-arm64
+Maintainer: admin@25mao.com
+Depends: firmware (>= 5.0)
+Filename: ./debs/iphoneos-arm64/微信插件管理-Rootless_0.1-3_iphoneos-arm64.deb
+Size: 19600
+MD5sum: a22961caba0a04024ceb4bd03eaf3550
+SHA1: cfd2091c79f977df16d5f2313cfdd6253946acab
+SHA256: 0396fe3303154ad76089836d0937afecbf8643c95f9a8c1ed41cb9253d551d74
+Section: Tweaks
+Priority: optional
+Description: 插件管理-Rootless
+Author: Mao
+Name: 微信插件管理-Rootless
+Sponsor: admin@25mao.com
+
