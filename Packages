@@ -582,6 +582,22 @@ Icon: https://axs66.github.io/repo/icon/wechat.png
 Name: PKC
 Sileodepiction: https://axs66.github.io/repo/sileodepiction/PKC/js.json
 
+Package: com.dao.appstoretroller
+Version: 0.1.2
+Architecture: iphoneos-arm64
+Maintainer: Mineek
+Depends: mobilesubstrate (>= 0.9.5000)
+Conflicts: dev.mineek.appstoretroller
+Filename: ./debs/iphoneos-arm64/AppStoreTroller(rootless)_0.1.2_iphoneos-arm64.deb
+Size: 38900
+MD5sum: 668a6304df280257a1fd851ba4398c18
+SHA1: 75ce8869e69b192acf07faf629fe6e12e61e602f
+SHA256: c558b78504380e6abb45433ec35ca67f62240c258c7c3f2dac448eb97271974c
+Section: 嗨-工具
+Description: 伪装成合适的iOS版本，并获取需高iOS版本的应用。
+Author: Mineek
+Name: AppStoreTroller(rootless)
+
 Package: com.dao.ccborder
 Version: 1.2
 Architecture: iphoneos-arm64
