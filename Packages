@@ -589,11 +589,11 @@ Maintainer: Mineek
 Depends: mobilesubstrate (>= 0.9.5000)
 Conflicts: dev.mineek.appstoretroller
 Filename: ./debs/iphoneos-arm64/AppStoreTroller(rootless)_0.1.2_iphoneos-arm64.deb
-Size: 38900
-MD5sum: 668a6304df280257a1fd851ba4398c18
-SHA1: 75ce8869e69b192acf07faf629fe6e12e61e602f
-SHA256: c558b78504380e6abb45433ec35ca67f62240c258c7c3f2dac448eb97271974c
-Section: 嗨-工具
+Size: 21000
+MD5sum: 4a1822783c1d2c69339331b5eb3adc62
+SHA1: db5982ddabce9214cf205db825cb1f0bcbbe678d
+SHA256: 9508b0491c009c67b7110c69c5fcd50445a66f23b64b0a591ce250959226cc29
+Section: Tweaks
 Description: 伪装成合适的iOS版本，并获取需高iOS版本的应用。
 Author: Mineek
 Name: AppStoreTroller(rootless)
@@ -1584,24 +1584,6 @@ Section: Tweaks
 Description: File Manager for iPhone, iPad, iPod Touch. Supports iOS 11+. This version only supports 64-bit devices
 Author: TIGI Software
 Name: Filza File Manager 64-bit
-
-Package: com.wkk.aqyhook
-Version: 1.0
-Architecture: iphoneos-arm64
-Maintainer: wkk
-Installed-Size: 168
-Pre-Depends: rootless-compat(>= 0.9)
-Depends: mobilesubstrate (>= 0.9.5000)
-Filename: ./debs/iphoneos-arm64/com.wkk.aqyhook_1.0_arm64e_iphoneos-arm64.deb
-Size: 15236
-MD5sum: ad4541a56baa1610b1e60bdfdb6fa7a9
-SHA1: 18f8aaa7c3eca673611b8f315a50908958a59eb2
-SHA256: 3e3368ef46a33e0eecf1c64e929724f7f0761a58c9a1bdbc4975e155af6c542f
-Section: 去广告
-Description: 去开屏广告和我的页面广告，其他不处理。版本：16.10.7
-Author: wkk
-Icon: https://s1.imagehub.cc/images/2025/11/14/f1023fd8a63f7323cc3bf502e4e91a53.png
-Name: 爱奇艺NoAds
 
 Package: com.wkk.atria
 Version: 1.4.1-6
